@@ -1,6 +1,6 @@
 const express =require('express');
 const app =express();
-const port =3000;
+const port = process.env.PORT || 3000;
 const expressLayouts=require('express-ejs-layouts');
 
 const db =require('./config/mongoose');
@@ -52,7 +52,7 @@ app.use(session({
         maxAge:1000*60*100
     },
     store: MongoStore.create({
-        mongoUrl:"mongodb://localhost/placment_cell",
+        mongoUrl:"mongodb+srv://ayushsingh4045:DeXlSENxzhapXyO8@cluster0.ji0rway.mongodb.net/PlacementCell?retryWrites=true&w=majority",
          autoRemove:'disabled', 
     }),
 

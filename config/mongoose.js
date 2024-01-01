@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 
-mongoose.connect("mongodb://localhost/placment_cell");
+mongoose.connect("mongodb+srv://ayushsingh4045:DeXlSENxzhapXyO8@cluster0.ji0rway.mongodb.net/PlacementCell?retryWrites=true&w=majority");
 
 const db =mongoose.connection;
 
