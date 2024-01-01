@@ -26,6 +26,7 @@ module.exports.create = async function (req, res) {
       try
       {
       await User.create(req.body)
+      req.flash('success','user registed successfully');
       return res.redirect("/");
       }catch(error)
       {
@@ -65,12 +66,18 @@ module.exports.dashboard=async function(req,res)
 
 module.exports.destroySession = function(req,res)
 {
+
+  
   req.logout(function(err){
     if(err){
       console.error(err);
       return res.status(500).json({ message: 'Error logging out' });
     }
+    else
+    {
+      req.flash('success','logout successfully');
+    }
 });
-req.flash('success','log out successfully');
+
   return res.redirect('/');
 }
