@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+
+  <div class="form-box">
+    <h1>User Sign In</h1>
+
+    <form action="users/create-session" method="post">
+      <div class="input-field form-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email id" required>
+      </div>
+      <div class="input-field form-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+      <div class="input-field form-group">
+        <input type="submit" class="btn btn-primary" value="Sign In">
+      </div>
+    </form>
+
+    <div>
+      <h5>Do not have a account?</h5>
+      <a class="btn btn-success" href="/sign-up">Register</a>
+      
+    </div>
+  </div>

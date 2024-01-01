@@ -1,0 +1,29 @@
+
+.form-box {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    width: fit-content;
+    padding: 10px; /* Add some padding for better appearance */
+    margin: 0px auto;
+}
+
+.input-field {
+    margin: 5px 0; /* Adjust vertical spacing */
+}
+
+
+.input-field input {
+    width: 300px;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.score {
+    width: 95px;
+    margin: 3px;
+}
+

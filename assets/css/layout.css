@@ -1,0 +1,57 @@
+body
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+.container
+{
+     margin:100px  auto;
+}
+
+
+header
+{
+    display: flex;
+    flex-direction: row;
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    justify-content: space-around;
+    text-align: center;
+    background-color: black;
+    color:white;
+    padding: 10px 10px;
+}
+
+header a
+{
+    text-decoration: none;
+    color: white;
+    margin: 10px 10px;
+}
+
+footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    background-color: black;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    color:white;
+    padding: 10px 10px;
+}
+footer a
+{
+    text-decoration: none;
+    color: white;
+    margin: 15px 15px;
+}

@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+<!-- Button to trigger the modal -->
+<div>
+<div>
+<button class="btn btn-success" data-target="#student" data-toggle="modal"><i class="fa-solid fa-plus"></i> Add Student</button>
+</div>
+<!-- Modal for adding a student -->
+<div class="modal fade" id="student">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-centered">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="text-primary text-center">Student</h3>
+        <!-- Close button for the modal -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <!-- Modal Body -->
+      <div class="modal-body ">
+      <form class="form-box" action="/student/add-student" method="post">
+         <!-- Form fields -->
+          <div class="input-field">
+            <input type="text" name="name" placeholder="Name">
+          </div>
+          <div class="input-field">
+            <input type="email" name="email" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <input type="tel" name="phoneNumber" placeholder="Contact number">
+          </div>
+          <div class="input-field">
+            <input type="text" name="batch" placeholder="Batch">
+          </div>
+          <div class="input-field">
+            <input type="text" name="college" placeholder="College">
+          </div>
+        
+          <div class="input-field">
+            <label for="status">Placement status:</label>
+            <select name="status" id="status">
+              <option value="placed">Placed</option>
+              <option value="not placed">Not placed</option>
+            </select>
+          </div>
+        
+          <div>
+            <input type="number" class="score" name="reactScore" placeholder="React Score">
+            <input type="number" class="score" name="webdScore" placeholder="WebD Score">
+            <input type="number" class="score" name="dsaScore" placeholder="DSA Score">
+          </div>
+          <div class="input-field">
+            <input type="submit" class="btn btn-primary" value="Add Student">
+          </div>
+          
+        
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

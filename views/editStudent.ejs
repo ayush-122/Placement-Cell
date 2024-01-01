@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+<h1>Edit Student</h1>
+   <form class="form-box" action="/student/update/<%= student.id %>" method="post">
+        <!-- Form fields -->
+         <div class="input-field">
+           <input type="text" name="name" placeholder="Name" value="<%= student.name %>" disabled>
+         </div>
+         <div class="input-field">
+           <input type="email" name="email" placeholder="Email" value="<%= student.email %>" disabled>
+         </div>
+         <div class="input-field">
+           <input type="tel" name="phoneNumber" placeholder="Contact number"  value= "<%= student.phoneNumber %>">
+         </div>
+         <div class="input-field">
+           <input type="text" name="batch" placeholder="Batch" value= "<%= student.batch %>">
+         </div>
+         <div class="input-field">
+           <input type="text" name="college" placeholder="College" value= "<%= student.college %>">
+         </div>
+       
+         <div class="input-field">
+           <label for="status">Placement status:</label>
+           <select name="status" id="status" value= "<%= student.status %>">
+             <option value="placed">Placed</option>
+             <option value="not placed">Not placed</option>
+           </select>
+         </div>
+       
+         <div>
+           <input type="number" class="score" name="reactScore" placeholder="React Score" value= "<%= student.reactScore %>">
+           <input type="number" class="score" name="webdScore" placeholder="WebD Score" value= "<%= student.webdScore %>" >
+           <input type="number" class="score" name="dsaScore" placeholder="DSA Score" value= "<%= student.dsaScore %>">
+         </div>
+         <div class="input-field">
+           <input type="submit" class="btn btn-primary" value="Update">
+         </div>
+         
+       
+         
+       </form>
+

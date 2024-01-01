@@ -1,0 +1,34 @@
+<div class="container-interviewlist">
+    <h1><%= interview.company %></h1>
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Student Name</th>
+          <th>Result</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let studentL of interview.students) { %>
+          <tr>
+            <td><%= studentL.student.name %></td>
+            <td>
+              <form action="/interview/updateResult/<%= interview.id %>/<%= studentL.student.id %>" method="post">
+                <select class="form-control" name="result">
+                  <option value="On Hold" <%= studentL.result === 'On Hold' ? 'selected' : '' %>>On Hold</option>
+                  <option value="Selected" <%= studentL.result === 'Selected' ? 'selected' : '' %>>Selected</option>
+                  <option value="Pending" <%= studentL.result === 'Pending' ? 'selected' : '' %>>Pending</option>
+                  <option value="Not Selected" <%= studentL.result === 'Not Selected' ? 'selected' : '' %>>Not Selected</option>
+                  <option value="Did not Attempt" <%= studentL.result === 'Did not Attempt' ? 'selected' : '' %>>Did not Attempt</option>
+                </select>
+            </td>
+            <td>
+              <button type="submit" class="btn btn-primary">Update Result</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>

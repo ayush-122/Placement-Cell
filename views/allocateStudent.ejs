@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+<!-- Button to trigger the modal -->
+<div>
+<div>
+<button class="btn btn-primary" data-target="#allocate" data-toggle="modal"><i class="fa-solid fa-plus"></i>Allocate Student</button>
+</div>
+<!-- Modal for adding a student -->
+<div class="modal fade" id="allocate">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-centered">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="text-primary text-center">Inteviews</h3>
+        <!-- Close button for the modal -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <!-- Modal Body -->
+      <div class="modal-body ">
+      <form class="form-box" action="/interview/allocate" method="post">
+         <!-- Form fields -->
+          
+          <div class="input-field">
+            <label for="company">Company:</label>
+            <select name="interviewId" id="company">
+              <option value="company">Company</option>
+              <%for(let interview of interviews){ %>
+              <option value="<%= interview.id %>"><%= interview.company %></option>
+              <%}%>
+            </select>
+          </div>
+         <div class="input-field">
+            <label for="Student">Student:</label>
+            <select name="studentId" id="student">
+              <option value="Student">student</option>
+              <%for(let student of students)
+              {%>
+              <option value="<%= student.id %>"><%= student.name %></option>
+             <% }%>
+            </select>
+          </div>
+          <div class="input-field">
+            <input type="submit" class="btn btn-primary" value="Allocate">
+          </div>
+          
+        
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

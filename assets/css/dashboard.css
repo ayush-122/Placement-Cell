@@ -1,0 +1,44 @@
+/* dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-evenly; /* Adjust as needed */
+}
+
+.studentlist-container,
+.interview-container {
+  flex:1; /* Distribute available space equally between the two containers */
+  padding: 20px;
+}
+
+/* Background color for the left container */
+
+.studentlist-container table
+{
+  background-color:lightyellow;
+}
+
+/* Background color for the right container */
+.interview-container  table{
+  background-color:lightgreen; /* Light blue background color for the interview container */
+}
+
+/* Add any additional styling for your tables as needed */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  color:black /* White text color for better readability on colorful backgrounds */
+}
+
+/* Optional: Hover effect for better user experience */
+.table tbody tr:hover {
+  background-color: #4d94ff; /* Darker blue color on hover */
+}
+
+.interview-button
+{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin:10px;
+}

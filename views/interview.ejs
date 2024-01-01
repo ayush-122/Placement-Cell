@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+<!-- Button to trigger the modal -->
+<div>
+<div>
+<button class="btn btn-success" data-target="#interview" data-toggle="modal"><i class="fa-solid fa-plus"></i>Schedule Inteviews</button>
+</div>
+<!-- Modal for adding a student -->
+<div class="modal fade" id="interview">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-centered">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="text-primary text-center">Inteviews</h3>
+        <!-- Close button for the modal -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <!-- Modal Body -->
+      <div class="modal-body ">
+      <form class="form-box" action="/interview/create" method="post">
+         <!-- Form fields -->
+          <div class="input-field">
+            <label for="company_name">Company:</label>
+            <input type="text" name="company" placeholder=" Company name">
+          </div>
+          <div class="input-field">
+            <label for="date">Visit date</label>
+            <input type="date" name="visitDate">
+          </div>
+          
+          
+          <div class="input-field">
+            <input type="submit" class="btn btn-primary" value="Create">
+          </div>
+          
+        
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
