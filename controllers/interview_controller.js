@@ -24,8 +24,8 @@ module.exports.create=async function(req,res)
     }
     
     try{
-    const students = await Student.find({});
-    const interviews =await Interview.find({});
+    
+    req.flash('success','interview is created');
     return res.redirect('back');
 }
 catch(error)
@@ -75,6 +75,7 @@ module.exports.allocateStudent = async function (req, res) {
       student.interviews.push(interviewId);
 
       await student.save();
+      req.flash('success','student is alloted to interview');
 
       // console.log('bhai me student hoon',student);
     }
@@ -83,9 +84,9 @@ module.exports.allocateStudent = async function (req, res) {
       console.log('error in pushing students',error);
     }
     } else {
-      console.log("Student is already allocated to this company");
+      req.flash('error','Student is already allocated to this company');
     }
-
+     
     return res.redirect('back');
   } catch (error) {
     console.error('Error in allocateStudent:', error);
@@ -144,6 +145,7 @@ module.exports.destroy =async function(req,res)
         });
       }
         await Interview.findByIdAndDelete(req.params.id);
+        req.flash('success','interview is deleted');
         return res.redirect('back');
 
     }}

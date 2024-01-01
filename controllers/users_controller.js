@@ -17,7 +17,7 @@ module.exports.create = async function (req, res) {
   console.log(` email validation is ${validEmail}`);
   if(!validEmail)
   {
-      console.log("I am here");
+      req.flash('error','Domain name is not correct');
       return res.redirect('back');
   }
   try {
@@ -33,7 +33,7 @@ module.exports.create = async function (req, res) {
          return res.redirect('back');
       }
     } else {
-      console.log("user is already existings");
+      req.flash('error','user already exists');
       return res.redirect("back");
     }
   } catch (error) {
@@ -44,6 +44,7 @@ module.exports.create = async function (req, res) {
 
 //create session that is when user click on the sign-in button
 module.exports.createSession = function (req, res) {
+  req.flash('success','Logged in Successfully');
   return res.redirect('/users/dashboard');
 };
 
@@ -70,5 +71,6 @@ module.exports.destroySession = function(req,res)
       return res.status(500).json({ message: 'Error logging out' });
     }
 });
+req.flash('success','log out successfully');
   return res.redirect('/');
 }

@@ -18,14 +18,13 @@ passport.use(new LocalStrategy({
             console.log(` email validation is ${validEmail}`);
             if(!validEmail)
             {
-                console.log("I am here");
+                req.flash('error','user does not exists in coding ninjas domain');
                 return done(null ,false,{message:'User does not exist in our domain'});
             }
             const user = await User.findOne({ email: email });
 
             if (!user || user.password != password) {
-                console.log('Invalid UserName/Password');
-                //req.flash('error','Invalid UserName/Password');
+                req.flash('error','Invalid UserName/Password');
                 return done(null, false);
 
             }

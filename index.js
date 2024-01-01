@@ -13,6 +13,10 @@ const sassMiddleWare =require('node-sass-middleware');
 const json2csv =require('json2csv').Parser;
 const fs =require('fs');
 
+const flash =require('connect-flash');
+
+const customWare =require('./config/middleware');
+
 
 //use layouts
 
@@ -44,7 +48,7 @@ app.set('layout extractStyles' ,true);
 app.set('layout extractScripts' ,true);
 
 app.use(session({
-    name:'Placement-cell',
+    name:'PlacementCell',
     secret:'blahsomething',
     saveUninitialized:false,
     resave:false,
@@ -62,6 +66,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 //use express Router
+
+app.use(flash());
+app.use(customWare.setFlash);
 app.use('/',require('./routes'));
 
 app.listen(port, (err)=>{

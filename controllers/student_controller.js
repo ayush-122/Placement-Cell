@@ -14,7 +14,7 @@ module.exports.addStudent= async function(req,res)
         console.log(`error in creating student:${error}`);
     }
     
-
+     req.flash('success', 'student is added');
     return res.redirect("back");
 }
 
@@ -58,7 +58,7 @@ module.exports.update =async function(req,res)
         };
     
         await Student.findByIdAndUpdate(studentId, updatedData);
-    
+          req.flash('success','student is updated');
         res.redirect('/users/dashboard'); // Redirect to the dashboard or the student list page
       } catch (error) {
         console.error(`Error updating student: ${error}`);
@@ -83,7 +83,7 @@ module.exports.destroy= async function(req,res)
 
 
         await Student.findByIdAndDelete(studentId);
-    
+        req.flash('success','student is deleted');   
         res.redirect('/users/dashboard'); // Redirect to the dashboard or the student list page
       } }catch(error) {
         return console.error(`Error deleting student: ${error}`);
