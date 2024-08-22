@@ -1,5 +1,5 @@
 # Placement-Cell
-A simple demo web application using express node js for managing placment for coding ninjas student.
+A simple web application using express node js for managing placment for coding ninjas student.
 
 
 Only user with mail id @codingninajs.in can login into the system.
